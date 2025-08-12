@@ -1,28 +1,42 @@
 :root {
-    --primary-color: #6366f1;
-    --text-color: #0f172a;
-    --bg-color: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-    --nav-border: rgba(231, 231, 231, 0.8);
-    --nav-height: 70px;
-    --nav-shadow: 0 5px 20px -5px rgba(99, 102, 241, 0.1);
-    --button-bg: rgba(99, 102, 241, 0.1);
-    --button-hover: rgba(99, 102, 241, 0.15);
-}
-
-[data-theme="dark"] {
     --primary-color: #818cf8;
     --text-color: #f1f5f9;
     --bg-color: #0f172a;
     --nav-bg: rgba(15, 23, 42, 0.8);
     --nav-border: rgba(51, 65, 85, 0.8);
+    --nav-height: 70px;
     --nav-shadow: 0 5px 20px -5px rgba(129, 140, 248, 0.15);
     --button-bg: rgba(129, 140, 248, 0.1);
     --button-hover: rgba(129, 140, 248, 0.15);
 }
 
-body {
+/* Reset and global styles */
+html, body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Your other CSS styles below... */
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Ensure images and media don't cause overflow */
+img, video, iframe, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -42,16 +56,25 @@ body {
     box-shadow: var(--nav-shadow);
 }
 
+/* 3. Fix nav-container padding and width */
 .nav-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 2rem; /* keep padding but box-sizing includes it */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 2rem;
     gap: 2rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 .nav-logo {
@@ -129,11 +152,43 @@ body {
     animation: shineLogo 1s ease forwards;
 }
 
+/* 4. Remove horizontal padding to prevent overflow */
 .nav-links {
     display: flex;
     gap: 1rem;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0; /* no horizontal padding to avoid overflow */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        width: 100vw; /* ensure it doesn't exceed viewport width */
+        background: var(--nav-bg);
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--nav-border);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--nav-shadow);
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .nav-link {
@@ -274,41 +329,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: var(--nav-bg);
-        padding: 1rem;
-        flex-direction: column;
-        gap: 1rem;
-        border-bottom: 1px solid var(--nav-border);
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform 0.3s, opacity 0.3s;
-        top: var(--nav-height);
-        gap: 0.5rem;
-        visibility: hidden;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        backdrop-filter: blur(10px);
-        box-shadow: var(--nav-shadow);
-    }
-
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .mobile-menu {
-        display: flex !important;
-    }
-
-    .nav-container {
-        padding: 0 1rem;
-    }
-
     .nav-link {
         width: 100%;
         padding: 0.75rem 1rem;
@@ -342,6 +362,7 @@ body {
     }
 }
 
- .hover\:scale-105:hover {
+.hover\:scale-105:hover {
     transition: transform 0.3s ease-in-out;
-  }
+}
+

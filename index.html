@@ -1,356 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naeim Saifi Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<html lang="en">
-  <head>
-   <meta charset="utf-8"/>
-   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-   <title>
-    Naeim Saifi Portfolio
-   </title>
-   <script src="https://cdn.tailwindcss.com">
-   </script>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-   <link rel="stylesheet" href="styles.css">
- </head>
-  <body class="font-roboto bg-gray-100 text-gray-900">
-   <nav class="premium-nav">
-     <div class="nav-container">
-         <a href="#" class="nav-logo">
-             <span class="logo-text">Naeim Saifi</span>
-             <div class="logo-shine"></div>
-         </a>
-         
-         <div class="nav-links">
-             <a href="#home" class="nav-link active">
-                 <i class="ri-home-5-line"></i>
-                 <span>Home</span>
-             </a>
-             <a href="#about" class="nav-link">
-                 <i class="ri-information-line"></i>
-                 <span>About</span>
-             </a>
-             <a href="#projects" class="nav-link">
-                 <i class="ri-stack-line"></i>
-                 <span>Projects</span>
-             </a>
-             <a href="#skills" class="nav-link">
-                 <i class="ri-mail-line"></i>
-                 <span>Skills</span>
-             </a>
-             <a href="#contact" class="nav-link">
-                 <i class="ri-mail-line"></i>
-                 <span>Contact</span>
-             </a>
-         </div>
- 
-         <div class="nav-actions">
-             <button class="theme-toggle" aria-label="Toggle theme">
-                 <i class="ri-sun-line sun-icon"></i>
-                 <i class="ri-moon-line moon-icon"></i>
-             </button>
-             <button class="mobile-menu" aria-label="Menu">
-                 <i class="ri-menu-line"></i>
-             </button>
-         </div>
-     </div>
- </nav>
- 
-   <!-- end nav bar -->
-   <!-- Hero Section -->
-   <section class="relative bg-gray-800 text-white" id="home">
-    <img alt="Tech-themed background image" class="absolute inset-0 w-full h-full object-cover opacity-50" height="1080" src="https://storage.googleapis.com/a1aa/image/aX0fwNCsclSqAqfmrAFN1i1X3Sh7fucIiEBRdxIJTwbVS2PoA.jpg" width="1920"/>
-    <div class="container mx-auto relative z-10 flex flex-col items-center justify-center h-screen text-center">
-     <h2 class="text-4xl md:text-6xl font-bold">
-      Aspiring Software Engineer
-     </h2>
-     <p class="mt-4 text-xl md:text-2xl">
-      AI &amp; ML Enthusiast
-     </p>
-     <p class="mt-4 text-lg md:text-xl">
-      Currently an M.Tech student specializing in Artificial Intelligence and Machine Learning, actively seeking opportunities to launch a career.
-     </p>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .glow-hover:hover {
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      transform: translateY(-5px);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #6d28d9, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-white/70 backdrop-blur-md shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+    <a href="#" class="font-bold text-xl gradient-text">Naeim Saifi</a>
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-indigo-500 transition">Home</a>
+      <a href="#about" class="hover:text-indigo-500 transition">About</a>
+      <a href="#projects" class="hover:text-indigo-500 transition">Projects</a>
+      <a href="#education" class="hover:text-indigo-500 transition">Education</a>
+      <a href="#contact" class="hover:text-indigo-500 transition">Contact</a>
     </div>
-   </section>
-   <!-- About Section with Animation -->
- <!-- <section class="py-20 bg-white" id="about">
+    <!-- Mobile menu button -->
+    <button id="mobileMenuBtn" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
 
-     <div class="container mx-auto">
-       <h2 class="text-3xl font-bold text-center mb-10 opacity-0 transform translate-y-10 transition-all duration-1000" id="about-heading">About Me</h2>
-       <div class="flex flex-col md:flex-row items-center opacity-0 transform translate-y-10 transition-all duration-1000 delay-300" id="about-content">
-         <div class="md:w-1/2">
-           <p class="text-lg mb-4">I am Naeim Saifi, an aspiring software engineer with a proactive approach to learning and contributing to teams. I am passionate about AI and ML and am currently pursuing my M.Tech in this field.</p>
-           <ul class="text-lg">
-             <li><strong>Marital Status:</strong> Unmarried</li>
-             <li><strong>Date of Birth:</strong> 15/06/2002</li>
-             <li><strong>Nationality:</strong> Indian</li>
-           </ul>
-         </div>
-         <div class="md:w-1/2 mt-10 md:mt-0">
-           <img alt="Profile picture of Naeim Saifi" class="rounded-full mx-auto opacity-0 transform scale-90 transition-all duration-1000 delay-500" id="about-image" height="500" 
-           src="https://i.postimg.cc/8zMyS3RC/img.jpg" width="500"/>
-         </div>
+  <!-- Mobile nav links -->
+  <div id="mobileNav" class="md:hidden fixed top-16 left-0 right-0 bg-white/70 backdrop-blur-md shadow-md flex flex-col space-y-4 p-6 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 z-40">
+    <a href="#home" class="hover:text-indigo-500 transition">Home</a>
+    <a href="#about" class="hover:text-indigo-500 transition">About</a>
+    <a href="#projects" class="hover:text-indigo-500 transition">Projects</a>
+    <a href="#education" class="hover:text-indigo-500 transition">Education</a>
+    <a href="#contact" class="hover:text-indigo-500 transition">Contact</a>
+  </div>
+</nav>
 
 
-       </div>
-     </div>
-   </section> -->
+<script>
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.contains('opacity-100');
+    if (isOpen) {
+      mobileNav.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      mobileNav.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+    } else {
+      mobileNav.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      mobileNav.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+    }
+  });
+</script>
 
 
-   <section class="py-20 bg-gradient-to-b from-gray-100 to-white" id="about">
-    <div class="container mx-auto px-6 lg:px-20">
-        <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-12 opacity-0 transform translate-y-10 transition-all duration-1000" id="about-heading">
-            About Me
-        </h2>
-        
-        <div class="flex flex-col-reverse md:flex-row items-center justify-between opacity-0 transform translate-y-10 transition-all duration-1000 delay-300" id="about-content">
-            <!-- Text Content -->
-            <div class="md:w-1/2 text-center md:text-left">
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    I am <span class="text-purple-600 font-semibold">Naeim Saifi</span>, an aspiring software engineer with a proactive approach to learning and contributing to teams. 
-                    I am passionate about AI and ML and am currently pursuing my M.Tech in this field.
-                </p>
-                <ul class="text-lg text-gray-600 space-y-2">
-                    <li><strong class="text-gray-800">Marital Status:</strong> Unmarried</li>
-                    <li><strong class="text-gray-800">Date of Birth:</strong> 15/06/2002</li>
-                    <li><strong class="text-gray-800">Nationality:</strong> Indian</li>
-                </ul>
-                
-                <!-- Social Links -->
-                <div class="mt-6 flex justify-center md:justify-start space-x-4">
-                    <a href="https://www.linkedin.com/in/NaeimSaifi" target="_blank" class="text-gray-600 hover:text-purple-600 transition">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                    </a>
-                    <a href="https://github.com/Naeim-Saifi" target="_blank" class="text-gray-600 hover:text-purple-600 transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                    <a href="mailto:naeimsaifi1111@gmail.com" class="text-gray-600 hover:text-purple-600 transition">
-                        <i class="fas fa-envelope text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Image -->
-            <div class="md:w-1/2 flex justify-center">
-                <img src="https://i.postimg.cc/8zMyS3RC/img.jpg" alt="Profile picture of Naeim Saifi" 
-                    class="rounded-full shadow-lg transform scale-90 opacity-0 transition-all duration-1000 delay-500 hover:scale-100 hover:shadow-2xl"
-                    id="about-image" width="350" height="350"/>
-            </div>
+
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+  
+  <!-- AI Background Image -->
+  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop" 
+       alt="AI Background" 
+       class="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom">
+  
+  <!-- Particle Background -->
+  <div id="particles-js" class="absolute inset-0"></div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl px-6 animate-fade-up">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 animate-gradient">
+      Full Stack & AI/ML Engineer
+    </h1>
+    <p class="text-lg md:text-xl mb-4 font-semibold text-indigo-200">
+      Working at <a href="https://satleolabs.com" target="_blank" class="underline hover:text-indigo-400">Satleo Labs</a> — Small Satellite Thermal Intelligence
+    </p>
+    <p class="text-gray-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+      Passionate about building scalable applications and AI-driven solutions. 
+      Currently pursuing <strong>M.Tech in AI & ML</strong> and developing cutting-edge 
+      thermal imaging systems, temperature mapping, and data-driven analytics.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-8 flex justify-center gap-4">
+      <a href="#projects" 
+         class="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-lg font-semibold shadow-lg hover:bg-white/20 hover:shadow-indigo-500/50 transition transform hover:scale-105">
+         View My Work
+      </a>
+      <a href="#contact" 
+         class="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg font-semibold shadow-lg hover:from-pink-600 hover:to-purple-700 transition transform hover:scale-105">
+         Contact Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Animations -->
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  .animate-fade-up {
+    animation: fadeUp 1.2s ease-out forwards;
+  }
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+  }
+  .animate-slow-zoom {
+    animation: slowZoom 20s ease-in-out infinite alternate;
+  }
+</style>
+
+<!-- Particle.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80, density: { enable: true, value_area: 800 } },
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+    move: { enable: true, speed: 3 }
+  }
+});
+</script>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gradient-to-b from-gray-100 to-white">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 text-center md:text-left" data-aos="fade-right">
+      <h2 class="text-4xl font-bold mb-6 gradient-text">About Me</h2>
+      <p class="mb-4 text-gray-700">
+        I’m <span class="text-indigo-600 font-semibold">Naeim Saifi</span>, a Full Stack & AI/ML Engineer passionate about creating intelligent, scalable, and impactful digital solutions. 
+        With a strong foundation in AI, machine learning, and end-to-end web development, I specialize in building applications that bridge innovation with real-world utility.
+        <br><br>
+        Currently pursuing my <strong>M.Tech in AI & ML</strong>, I’m also working at 
+        <a href="https://www.satleolabs.com" target="_blank" class="text-indigo-600 font-semibold hover:underline">Satleo Labs</a>
+        on cutting-edge projects in satellite thermal intelligence — from processing satellite imagery with Google Earth Engine to deploying AI models for geospatial analytics. 
+        My goal is to harness technology to solve complex problems and deliver transformative user experiences.
+      </p>
+      <ul class="space-y-2 text-gray-600">
+        <li><strong>Marital Status:</strong> Unmarried</li>
+        <li><strong>Date of Birth:</strong> 15/06/2002</li>
+        <li><strong>Nationality:</strong> Indian</li>
+        <li><strong>Location:</strong> Ahmedabad, India</li>
+      </ul>
+      <div class="flex justify-center md:justify-start space-x-4 mt-6">
+        <a href="https://www.linkedin.com/in/NaeimSaifi" target="_blank" class="text-gray-600 hover:text-indigo-600"><i class="fab fa-linkedin text-2xl"></i></a>
+        <a href="https://github.com/Naeim-Saifi" target="_blank" class="text-gray-600 hover:text-indigo-600"><i class="fab fa-github text-2xl"></i></a>
+        <a href="mailto:naeimsaifi1111@gmail.com" class="text-gray-600 hover:text-indigo-600"><i class="fas fa-envelope text-2xl"></i></a>
+      </div>
+    </div>
+    <div class="flex-1 flex justify-center" data-aos="fade-left">
+      <img src="https://i.postimg.cc/8zMyS3RC/img.jpg" alt="Profile" class="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-indigo-500">
+    </div>
+  </div>
+</section>
+<!-- Experience Section -->
+<section id="experience" class="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">
+      Experience
+    </h2>
+
+    <div class="glass-card p-8 rounded-2xl shadow-2xl glow-hover border border-gray-200"
+         data-aos="fade-up">
+      <div class="flex items-center mb-4">
+        <div class="bg-indigo-500 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg">
+          <i class="ri-rocket-fill text-xl"></i>
         </div>
+        <div class="ml-4">
+          <h3 class="text-2xl font-bold text-gray-800">Full Stack & AI/ML Engineer</h3>
+          <p class="text-gray-700 font-semibold">
+            <a href="https://satleolabs.com" target="_blank" class="text-indigo-600 hover:underline">
+              Satleo Labs
+            </a> — Small Satellite Thermal Intelligence
+          </p>
+          <p class="text-gray-500 italic">Aug 2025 – Present | Ahmedabad, India</p>
+        </div>
+      </div>
+
+      <ul class="list-disc list-inside space-y-4 text-gray-700 leading-relaxed">
+        <li>
+          Developed backend pipelines to process thermal satellite imagery 
+          using <strong>Google Earth Engine</strong> & <strong>Python</strong>.
+        </li>
+        <li>
+          Integrated AI/ML models for temperature mapping, anomaly detection, 
+          and spatial analytics.
+        </li>
+                <li>
+          Enhanced temperature prediction resolution
+          using regression-based super-resolution techniques with 
+          <strong>Landsat</strong> and <strong>Sentinel</strong> datasets.
+        </li>
+        <li>
+          Built interactive dashboards for visualizing satellite data 
+          with Map APIs & cloud storage.
+        </li>
+        <li>
+          Deployed scalable, secure solutions on <strong>AWS</strong> and <strong>GCP</strong>.
+        </li>
+
+      </ul>
     </div>
+  </div>
 </section>
 
 
 
+<!-- Projects Section with Modern Glass Cards -->
+<section class="py-20 bg-gray-100" id="projects">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-
-   <!-- Projects Section with Animated Themed Cards -->
- <section class="py-20 bg-gray-100" id="projects">
-     <div class="container mx-auto px-6">
-       <h2 class="text-4xl font-bold text-center mb-12 text-black drop-shadow-lg">Projects</h2>
-       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-         <!-- Project Card -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-purple-500">
-          <h3 class="text-2xl font-bold mb-3 text-gray-800">AI-Powered Real Estate Valuation</h3>
-          <p class="text-gray-600 mb-4">A machine learning model that predicts house prices based on market trends, using data preprocessing and feature engineering.</p>
-          <p class="mb-4"><strong>Technologies:</strong> Python, Scikit-Learn, Flask, Pandas, NumPy, Bootstrap</p>
-          <a href="#" class="text-purple-600 font-semibold hover:underline">View Project</a>
-      </div>
-      
-      <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-purple-500">
-          <h3 class="text-2xl font-bold mb-3 text-gray-800">Jarvis AI Virtual Assistant</h3>
-          <p class="text-gray-600 mb-4">An AI-powered virtual assistant capable of voice and text interactions, automating routine tasks with NLP.</p>
-          <p class="mb-4"><strong>Technologies:</strong> Python, NLP, Deep Learning, PyAudio, Google Speech API</p>
-          <a href="#" class="text-purple-600 font-semibold hover:underline">View Project</a>
-      </div>
-      
-      <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-purple-500">
-          <h3 class="text-2xl font-bold mb-3 text-gray-800">Ecommerce Online Shopping Application</h3>
-          <p class="text-gray-600 mb-4">A full-stack eCommerce platform for secure online shopping with user authentication and an admin dashboard.</p>
-          <p class="mb-4"><strong>Technologies:</strong> C#, ASP.NET Core, Angular, SQL Server, Bootstrap</p>
-          <a href="#" class="text-purple-600 font-semibold hover:underline">View Project</a>
-      </div>
-      
-      <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-purple-500">
-          <h3 class="text-2xl font-bold mb-3 text-gray-800">Library Management System</h3>
-          <p class="text-gray-600 mb-4">A digital library system for book management, user authentication, and secure transactions.</p>
-          <p class="mb-4"><strong>Technologies:</strong> .NET Core, Angular, SQL Server, Dapper ORM, Bootstrap</p>
-          <a href="#" class="text-purple-600 font-semibold hover:underline">View Project</a>
-      </div>
-      
-       </div>
-     </div>
-   </section>
-   
-  <!-- Skills Section with Animated Cards -->
- <section class="py-20 bg-gray-100" id="skills">
-     <div class="container mx-auto px-6">
-       <h2 class="text-4xl font-bold text-center mb-12 text-black drop-shadow-lg">Skills</h2>
-       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-         <!-- Programming Languages -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-blue-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">Programming Languages</h3>
-           <ul class="list-disc list-inside text-gray-600">
-             <li>Python</li>
-             <li>C#</li>
-             <li>JavaScript</li>
-             <li>Java</li>
-           </ul>
-         </div>
-         
-         <!-- Frameworks & Libraries -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-teal-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">Frameworks & Libraries</h3>
-           <ul class="list-disc list-inside text-gray-600">
-             <li>ASP.NET Core</li>
-             <li>Entity Framework</li>
-             <li>Dapper</li>
-             <li>Angular 14</li>
-             <li>Scikit-Learn</li>
-             <li>Pandas</li>
-             <li>Matplotlib</li>
-             <li>Numpy</li>
-           </ul>
-         </div>
-         
-         <!-- Databases -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-green-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">Databases</h3>
-           <ul class="list-disc list-inside text-gray-600">
-             <li>MS SQL Server</li>
-             <li>SQL</li>
-             <li>Mongo DB</li>
-           </ul>
-         </div>
-       
-       </div>
-     </div>
-   </section>
-   
-   
-  <!-- Education Section with Animated Cards -->
- <section class="py-20 bg-gray-100" id="education">
-     <div class="container mx-auto px-6">
-       <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Education</h2>
-       <div class="space-y-10">
-         <!-- M.Tech -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-indigo-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">M.Tech (AI & ML)</h3>
-           <p><strong>Institution:</strong> Lovely Professional University</p>
-           <p><strong>Duration:</strong> 2024 – 2026</p>
-         </div>
-         
-         <!-- B.Tech -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-purple-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">B.Tech (CSE)</h3>
-           <p><strong>Institution:</strong> RD Engineering College</p>
-           <p><strong>Duration:</strong> 2020 – 2024</p>
-           <p><strong>Percentage:</strong> 80%</p>
-         </div>
-         
-         <!-- Intermediate -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-red-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">Intermediate</h3>
-           <p><strong>Institution:</strong> St. DPS (CBSE)</p>
-           <p><strong>Duration:</strong> 2018 – 2019</p>
-           <p><strong>Percentage:</strong> 53%</p>
-         </div>
-         
-         <!-- High School -->
-         <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl border-l-8 border-green-500">
-           <h3 class="text-2xl font-bold mb-3 text-gray-800">High School</h3>
-           <p><strong>Institution:</strong> St. DPS (CBSE)</p>
-           <p><strong>Duration:</strong> 2016 – 2017</p>
-           <p><strong>Percentage:</strong> 93%</p>
-         </div>
-       </div>
-     </div>
-   </section>
-   
-   <!-- Contact Section with Animated Form -->
- <section class="py-20 bg-white" id="contact">
-     <div class="container mx-auto px-6">
-       <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Contact</h2>
-       <div class="flex flex-col md:flex-row items-center">
-         <div class="md:w-1/2">
-           <ul class="text-lg mb-10">
-             <li><strong>Location:</strong> Jalandhar, Punjab (144001)</li>
-             <li><strong>Phone:</strong> +91 - 8077889724</li>
-             <li><strong>Email:</strong> naeimsaifi1111@gmail.com</li>
-             <li><strong>LinkedIn:</strong> <a class="text-blue-500 hover:underline" href="https://www.linkedin.com/in/naeim-saifi-88102b1a2/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn Profile</a></li>
-           </ul>
-         </div>
-
-
-         <div class="md:w-1/2">
-          <form id="contact-form" class="bg-gray-100 p-6 rounded-xl shadow-lg">
-            <div class="mb-4">
-              <label class="block text-lg font-bold mb-2" for="name">Name</label>
-              <input class="w-full p-2 border border-gray-300 rounded-lg" id="name" required type="text"/>
-            </div>
-            <div class="mb-4">
-              <label class="block text-lg font-bold mb-2" for="email">Email</label>
-              <input class="w-full p-2 border border-gray-300 rounded-lg" id="email" required type="email"/>
-            </div>
-            <div class="mb-4">
-              <label class="block text-lg font-bold mb-2" for="message">Message</label>
-              <textarea class="w-full p-2 border border-gray-300 rounded-lg" id="message" required rows="4"></textarea>
-            </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-              Get in Touch
-            </button>
-          </form>
-          
-          <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-          <script>
-            (function(){
-                emailjs.init("leeZ6FwA2VMLPiF0Y"); 
-            })();
-          
-            document.getElementById("contact-form").addEventListener("submit", function(event) {
-                event.preventDefault(); 
-          
-                emailjs.send("service_a8ot0h9", "template_6kq2iqr", {
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value,
-                    message: document.getElementById("message").value
-                }).then(function(response) {
-                    console.log("Email sent successfully:", response); 
-                    alert("Message sent successfully!");
-                }, function(error) {
-                    console.error("Failed to send email:", error); 
-                    alert("Failed to send message. Please try again.");
-                });
-            });
-          </script>
+      <!-- Project Card -->
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">Smart Resume Analyzer and Job Matcher</h3>
+        <p class="text-gray-600 mb-4">A scalable web app that automates resume analysis and job matching using NLP and machine learning. Extracts key skills, applies semantic similarity for matches, and provides an efficient Django admin panel.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Django (MVT)</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">SpaCy</span>
+          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Hugging Face Transformers</span>
+          <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Machine Learning</span>
         </div>
-        
+        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+      </div>
 
+      <!-- Project Card -->
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">AI-Powered Real Estate Valuation</h3>
+        <p class="text-gray-600 mb-4">A machine learning model that predicts house prices based on market trends, using data preprocessing and feature engineering.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Python</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Scikit-Learn</span>
+          <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Pandas</span>
+        </div>
+        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+      </div>
 
-       </div>
-     </div>
-   </section>
-   <!-- Footer -->
-   <footer class="bg-gray-800 text-white py-5">
-    <div class="container mx-auto text-center">
-     <div class="mb-4">
-      <a class="text-white mx-2" href="https://www.linkedin.com/in/naeim-saifi-88102b1a2/?utm_source=share&utm_
-      campaign=share_via&utm_content=profile&utm_medium=android_app">
-       <i class="fab fa-linkedin fa-2x">
-       </i>
-      </a>
-      <a class="text-white mx-2" href="https://github.com/Naeim-Saifi">
-       <i class="fab fa-github fa-2x">
-       </i>
-      </a>
-     </div>
-     <p>
-      © 2023 Naeim Saifi. All rights reserved.
-     </p>
+      <!-- Project Card -->
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">Jarvis AI Virtual Assistant</h3>
+        <p class="text-gray-600 mb-4">An AI-powered virtual assistant capable of voice and text interactions, automating routine tasks with NLP.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Python</span>
+          <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">NLP(Natural Language Processing)</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Deep Learning</span>
+          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Google Speech API</span>
+        </div>
+        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+      </div>
+
+      <!-- Project Card -->
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">Ecommerce Online Shopping Application</h3>
+        <p class="text-gray-600 mb-4">A full-stack eCommerce platform for secure online shopping with user authentication and an admin dashboard.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">C#</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
+          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Angular</span>
+          <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">SQL Server</span>
+        </div>
+        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+      </div>
+
+      <!-- Project Card -->
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">Library Management System</h3>
+        <p class="text-gray-600 mb-4">A digital library system for book management, user authentication, and secure transactions.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">.NET Core</span>
+          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Angular</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">SQL Server</span>
+          <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Dapper ORM</span>
+        </div>
+        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+      </div>
+
     </div>
-   </footer>
-   <script src="script.js"></script>
-  </body>
- </html>
- 
- 
+  </div>
+</section>
+
+<!-- Glassmorphism & Glow Styles -->
+<style>
+  .glass-card {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .glow-hover:hover {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    transform: translateY(-5px);
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #6d28d9, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+
+<!-- Education -->
+<section id="education" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Education</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover" data-aos="fade-right">
+        <h3 class="text-2xl font-bold">M.Tech (AI & ML)</h3>
+        <p>Lovely Professional University | 2024 – 2026 | 85%</p>
+      </div>
+      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover" data-aos="fade-left">
+        <h3 class="text-2xl font-bold">B.Tech (CSE)</h3>
+        <p>RD Engineering College | 2020 – 2024 | 80%</p>
+      </div>
+
+            <div class="glass-card p-6 rounded-xl shadow-lg glow-hover" data-aos="fade-left">
+        <h3 class="text-2xl font-bold">Intermediate</h3>
+        <p>St. DPS (CBSE) | 2018 – 2019 | 53%</p>
+      </div>
+
+            <div class="glass-card p-6 rounded-xl shadow-lg glow-hover" data-aos="fade-left">
+        <h3 class="text-2xl font-bold">High School</h3>
+        <p>St. DPS (CBSE) | 2016 – 2017 | 93%</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Contact</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div data-aos="fade-right">
+        <p><strong>Location:</strong> Jalandhar, Punjab (144001)</p>
+        <p><strong>Phone:</strong> +91 - 8077889724</p>
+        <p><strong>Email:</strong> naeimsaifi1111@gmail.com</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naeim-saifi-88102b1a2/" class="text-indigo-600 hover:underline">Profile</a></p>
+      </div>
+      <div data-aos="fade-left">
+        <form class="glass-card p-6 rounded-xl shadow-lg space-y-4">
+          <input type="text" placeholder="Name" class="w-full p-2 border rounded-lg" required>
+          <input type="email" placeholder="Email" class="w-full p-2 border rounded-lg" required>
+          <textarea placeholder="Message" rows="4" class="w-full p-2 border rounded-lg" required></textarea>
+          <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-4 text-center">
+  <p>© 2025 Naeim Saifi. All Rights Reserved.</p>
+</footer>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+</body>
+</html>
