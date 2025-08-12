@@ -382,6 +382,7 @@ particlesJS("particles-js", {
   </div>
 </section>
 
+
 <!-- Contact -->
 <section id="contact" class="py-20 bg-gray-100">
   <div class="max-w-7xl mx-auto px-6">
@@ -394,10 +395,10 @@ particlesJS("particles-js", {
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naeim-saifi-88102b1a2/" class="text-indigo-600 hover:underline">Profile</a></p>
       </div>
       <div data-aos="fade-left">
-        <form class="glass-card p-6 rounded-xl shadow-lg space-y-4">
-          <input type="text" placeholder="Name" class="w-full p-2 border rounded-lg" required>
-          <input type="email" placeholder="Email" class="w-full p-2 border rounded-lg" required>
-          <textarea placeholder="Message" rows="4" class="w-full p-2 border rounded-lg" required></textarea>
+        <form id="contact-form" class="glass-card p-6 rounded-xl shadow-lg space-y-4">
+          <input type="text" name="name" placeholder="Name" class="w-full p-2 border rounded-lg" required>
+          <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded-lg" required>
+          <textarea name="message" placeholder="Message" rows="4" class="w-full p-2 border rounded-lg" required></textarea>
           <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Send</button>
         </form>
       </div>
@@ -405,7 +406,6 @@ particlesJS("particles-js", {
   </div>
 </section>
 
- 
 <!-- EmailJS SDK  -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
@@ -430,7 +430,8 @@ particlesJS("particles-js", {
         });
     });
   });
-</script> 
+</script>
+
   
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-4 text-center">
