@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -204,7 +205,7 @@ particlesJS("particles-js", {
       </div>
     </div>
     <div class="flex-1 flex justify-center" data-aos="fade-left">
-      <img src="https://i.postimg.cc/8zMyS3RC/img.jpg" alt="Profile" class="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-indigo-500">
+      <img src="https://i.postimg.cc/y6MqKVvf/img.jpg" alt="Profile" class="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-indigo-500">
     </div>
   </div>
 </section>
@@ -215,49 +216,68 @@ particlesJS("particles-js", {
       Experience
     </h2>
 
-    <div class="glass-card p-8 rounded-2xl shadow-2xl glow-hover border border-gray-200"
-         data-aos="fade-up">
-      <div class="flex items-center mb-4">
-        <div class="bg-indigo-500 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg">
-          <i class="ri-rocket-fill text-xl"></i>
+    <!-- Wrapper with spacing -->
+    <div class="space-y-10">
+      
+      <!-- Internship Card -->
+      <div class="glass-card p-8 rounded-2xl shadow-2xl glow-hover border border-gray-200" data-aos="fade-up">
+        <div class="flex items-center mb-4">
+          <div class="bg-indigo-500 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg">
+            <i class="ri-graduation-cap-fill text-xl"></i>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold text-gray-800">  Full-Stack Developer</h3>
+            <p class="text-gray-700 font-semibold">
+              <a href="" target="_blank" class="text-indigo-600 hover:underline">
+        Ashweera IT Services
+              </a>
+            </p>
+            <p class="text-gray-500 italic">  Jan 2024 – Jul 2024 | New Delhi, India</p>
+          </div>
         </div>
-        <div class="ml-4">
-          <h3 class="text-2xl font-bold text-gray-800">Full Stack & AI/ML Engineer</h3>
-          <p class="text-gray-700 font-semibold">
-            <a href="https://satleolabs.com" target="_blank" class="text-indigo-600 hover:underline">
-              Satleo Labs
-            </a> — Small Satellite Thermal Intelligence
-          </p>
-          <p class="text-gray-500 italic">Aug 2025 – Present | Ahmedabad, India</p>
-        </div>
+
+        <ul class="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
+          <li>Built a school management system using <strong>ASP.NET Core</strong> and <strong>Blazor</strong> to automate administrative tasks.</li>
+          <li>Created a <strong>role-based login system</strong> for students, teachers, and admins using <strong>Dapper</strong> and stored procedures.</li>
+          <li>Added features for <strong>assignment sharing and submission</strong> with secure file storage on <strong>AWS S3</strong>.</li>
+          <li>Enhanced UI interactivity and real-time updates using <strong>jQuery</strong>.</li>
+          <li>Integrated a <strong>secure authentication system</strong> with password hashing and session management.</li>
+          <li>Developed a <strong>dashboard for admins</strong> to manage users, classes, and performance reports.</li>
+          <li>Optimized database queries for improved performance and faster response times.</li>
+        </ul>
       </div>
 
-      <ul class="list-disc list-inside space-y-4 text-gray-700 leading-relaxed">
-        <li>
-          Developed backend pipelines to process thermal satellite imagery 
-          using <strong>Google Earth Engine</strong> & <strong>Python</strong>.
-        </li>
-        <li>
-          Integrated AI/ML models for temperature mapping, anomaly detection, 
-          and spatial analytics.
-        </li>
-                <li>
-          Enhanced temperature prediction resolution
-          using regression-based super-resolution techniques with 
-          <strong>Landsat</strong> and <strong>Sentinel</strong> datasets.
-        </li>
-        <li>
-          Built interactive dashboards for visualizing satellite data 
-          with Map APIs & cloud storage.
-        </li>
-        <li>
-          Deployed scalable, secure solutions on <strong>AWS</strong> and <strong>GCP</strong>.
-        </li>
+      <!-- Current Job Card -->
+      <div class="glass-card p-8 rounded-2xl shadow-2xl glow-hover border border-gray-200" data-aos="fade-up">
+        <div class="flex items-center mb-4">
+          <div class="bg-indigo-500 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg">
+            <i class="ri-rocket-fill text-xl"></i>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold text-gray-800">Full Stack & AI/ML Engineer</h3>
+            <p class="text-gray-700 font-semibold">
+              <a href="https://satleolabs.com" target="_blank" class="text-indigo-600 hover:underline">
+                Satleo Labs
+              </a> — Small Satellite Thermal Intelligence
+            </p>
+            <p class="text-gray-500 italic">Aug 2025 – Present | Ahmedabad, India</p>
+          </div>
+        </div>
 
-      </ul>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
+          <li>Developed backend pipelines to process thermal satellite imagery using <strong>Google Earth Engine</strong> & <strong>Python</strong>.</li>
+          <li>Integrated AI/ML models for temperature mapping, anomaly detection, and spatial analytics.</li>
+          <li>Improved temperature prediction resolution using regression-based super-resolution with <strong>Landsat</strong> and <strong>Sentinel</strong> datasets.</li>
+          <li>Built interactive dashboards for real-time visualization of satellite data with <strong>Map APIs</strong> & cloud storage.</li>
+          <li>Implemented scalable, secure deployment pipelines on <strong>AWS</strong> and <strong>GCP</strong>.</li>
+          <li>Collaborated in an <strong>Agile</strong> environment using Git and CI/CD workflows for seamless delivery.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 
 
@@ -274,62 +294,55 @@ particlesJS("particles-js", {
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Django (MVT)</span>
           <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">SpaCy</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
           <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Hugging Face Transformers</span>
           <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Machine Learning</span>
         </div>
-        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+        <a href="https://github.com/Naeim-Saifi/Resume_Analyzer.git" class="text-indigo-600 font-semibold hover:underline">View Project</a>
       </div>
 
       <!-- Project Card -->
-      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-2xl font-bold mb-3 text-gray-800">AI-Powered Real Estate Valuation</h3>
-        <p class="text-gray-600 mb-4">A machine learning model that predicts house prices based on market trends, using data preprocessing and feature engineering.</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Python</span>
-          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Machine Learning</span>
-          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Scikit-Learn</span>
-          <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Pandas</span>
-        </div>
-        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
-      </div>
+<div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="100">
+  <h3 class="text-2xl font-bold mb-3 text-gray-800">Construction Progress Monitoring System</h3>
+  <p class="text-gray-600 mb-4">A machine learning solution to track construction progress by comparing site images with a building plan, generating reports and alerts for discrepancies.</p>
+  <div class="flex flex-wrap gap-2 mb-4">
+    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Python</span>
+    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Deep Learning</span>
+    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+    <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Kaggle</span>
+  </div>
+  <a href="https://github.com/Naeim-Saifi/Hackathon-Project/tree/master/Construction%20Based%20(%20Building%20Recognition%20)" class="text-indigo-600 font-semibold hover:underline">View Project</a>
+</div>
 
       <!-- Project Card -->
       <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="200">
         <h3 class="text-2xl font-bold mb-3 text-gray-800">Jarvis AI Virtual Assistant</h3>
-        <p class="text-gray-600 mb-4">An AI-powered virtual assistant capable of voice and text interactions, automating routine tasks with NLP.</p>
+        <p class="text-gray-600 mb-4">An AI-powered virtual assistant capable of voice and text interactions. It uses Natural Language Processing (NLP) to understand user commands and automate 
+          routine tasks, making it ideal for integration into websites, apps, and smart devices.</p>
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Python</span>
-          <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">NLP(Natural Language Processing)</span>
+          <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Natural Language Processing</span>
           <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Deep Learning</span>
           <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Google Speech API</span>
         </div>
-        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+        <a href="https://github.com/Naeim-Saifi/Jarvis" class="text-indigo-600 font-semibold hover:underline">View Project</a>
       </div>
 
-      <!-- Project Card -->
-      <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="text-2xl font-bold mb-3 text-gray-800">Ecommerce Online Shopping Application</h3>
-        <p class="text-gray-600 mb-4">A full-stack eCommerce platform for secure online shopping with user authentication and an admin dashboard.</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">C#</span>
-          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
-          <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Angular</span>
-          <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">SQL Server</span>
-        </div>
-        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
-      </div>
 
       <!-- Project Card -->
       <div class="glass-card p-6 rounded-xl shadow-lg glow-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
         <h3 class="text-2xl font-bold mb-3 text-gray-800">Library Management System</h3>
-        <p class="text-gray-600 mb-4">A digital library system for book management, user authentication, and secure transactions.</p>
+        <p class="text-gray-600 mb-4">A digital library system for book management, user authentication, and secure transactions. It provides a comprehensive solution 
+          for managing a collection of books while ensuring user data is secure.</p>
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">.NET Core</span>
           <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Angular</span>
           <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">SQL Server</span>
           <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Dapper ORM</span>
+          <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Stored Procedure</span>
         </div>
-        <!-- <a href="#" class="text-indigo-600 font-semibold hover:underline">View Project</a> -->
+        <a href="https://github.com/Naeim-Saifi/Library.git" class="text-indigo-600 font-semibold hover:underline">View Project</a>
       </div>
 
     </div>
@@ -382,32 +395,54 @@ particlesJS("particles-js", {
   </div>
 </section>
 
-
 <!-- Contact -->
+<!-- Include Font Awesome in the head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <section id="contact" class="py-20 bg-gray-100">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Contact</h2>
     <div class="grid md:grid-cols-2 gap-8">
-      <div data-aos="fade-right">
-        <p><strong>Location:</strong> Jalandhar, Punjab (144001)</p>
-        <p><strong>Phone:</strong> +91 - 8077889724</p>
-        <p><strong>Email:</strong> naeimsaifi1111@gmail.com</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naeim-saifi-88102b1a2/" class="text-indigo-600 hover:underline">Profile</a></p>
+      <!-- Contact Details -->
+      <div class="space-y-4 text-lg" data-aos="fade-right">
+        <p class="flex items-center space-x-3">
+          <i class="fas fa-map-marker-alt text-indigo-600 text-2xl"></i>
+          <span><strong>Location:</strong> Ahmedabad, India</span>
+        </p>
+        <p class="flex items-center space-x-3">
+          <i class="fas fa-phone-alt text-green-600 text-2xl"></i>
+          <span><strong>Phone:</strong> <a href="tel:8077889724" class="hover:underline">8077889724</a></span>
+        </p>
+        <p class="flex items-center space-x-3">
+          <i class="fas fa-envelope text-red-600 text-2xl"></i>
+          <span><strong>Email:</strong> <a href="mailto:naeimsaifi1111@gmail.com" class="hover:underline">naeimsaifi1111@gmail.com</a></span>
+        </p>
+        <p class="flex items-center space-x-3">
+          <i class="fab fa-linkedin text-blue-600 text-2xl"></i>
+          <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naeim-saifi-88102b1a2/" target="_blank" class="text-indigo-600 hover:underline">Profile</a></span>
+        </p>
       </div>
+
+      <!-- Contact Form -->
       <div data-aos="fade-left">
-        <form id="contact-form" class="glass-card p-6 rounded-xl shadow-lg space-y-4">
-          <input type="text" name="name" placeholder="Name" class="w-full p-2 border rounded-lg" required>
-          <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded-lg" required>
-          <textarea name="message" placeholder="Message" rows="4" class="w-full p-2 border rounded-lg" required></textarea>
-          <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Send</button>
+        <form id="contact-form" class="glass-card p-6 rounded-xl shadow-lg space-y-4 bg-white">
+          <input type="text" name="name" placeholder="Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
+          <input type="email" name="email" placeholder="Email" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
+          <textarea name="message" placeholder="Message" rows="4" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></textarea>
+          <button type="submit" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-lg hover:bg-indigo-700 transition">Send Message</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- EmailJS SDK  -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- SweetAlert2 CSS & JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -421,18 +456,31 @@ particlesJS("particles-js", {
 
       emailjs.sendForm('service_a8ot0h9', 'template_6kq2iqr', this)
         .then(function () {
-          alert('Message sent successfully!');
+          Swal.fire({
+            icon: 'success',
+            title: 'Message Sent!',
+            text: 'Your message has been sent successfully.',
+            showConfirmButton: false,
+            timer: 2500
+          });
           form.reset();
         })
         .catch(function (error) {
-          alert('Failed to send message, please try again.');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Failed to send message, please try again!',
+            confirmButtonText: 'Retry'
+          });
           console.error('EmailJS error:', error);
         });
     });
   });
 </script>
 
-  
+
+
+
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-4 text-center">
   <p>© 2025 Naeim Saifi. All Rights Reserved.</p>
